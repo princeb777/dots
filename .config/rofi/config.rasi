@@ -1,0 +1,133 @@
+configuration {
+    modi: "drun,run,window";
+    font: "DaddyTimeMono Nerd Font Bold 10";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "󰄛 Apps";
+    display-run: "󰅂 Run";
+    display-window: "󰖯 Windows";
+    drun-display-format: "{name}";
+}
+
+@theme "/dev/null"
+
+* {
+    /* Cyber-Neon / Fortnite Palette matching Polybar */
+    bg: #0f0e1af2;
+    bg-alt: #1e1938;
+    bg-selected: #2d2454;
+    fg: #f8f9fc;
+    fg-muted: #7a789e;
+    
+    cyan: #00f0ff;
+    purple: #b829ff;
+    magenta: #ff2a85;
+    yellow: #ffe600;
+    
+    border-col: #3b2d69;
+    border-glow: #00f0ff;
+
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @bg;
+    border: 1px;
+    border-color: @border-col;
+    border-radius: 4px;
+    width: 480px;
+    padding: 14px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 12px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border: 1px;
+    border-color: @purple;
+    border-radius: 4px;
+    padding: 8px 12px;
+    spacing: 10px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: @cyan;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @fg-muted;
+    text-color: @fg;
+    cursor: text;
+}
+
+listview {
+    lines: 7;
+    columns: 1;
+    cycle: true;
+    scrollbar: false;
+    spacing: 4px;
+}
+
+element {
+    padding: 8px 10px;
+    border-radius: 4px;
+    spacing: 10px;
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @bg-selected;
+    text-color: @magenta;
+    border: 1px;
+    border-color: @magenta;
+}
+
+element selected.active {
+    background-color: @bg-selected;
+    text-color: @magenta;
+    border: 1px;
+    border-color: @magenta;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element normal.urgent {
+    background-color: @bg-alt;
+    text-color: @magenta;
+}
+
+element selected.urgent {
+    background-color: @bg-selected;
+    text-color: @magenta;
+    border: 1px;
+    border-color: @magenta;
+}
+
+element-icon {
+    size: 22px;
+    cursor: pointer;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+    cursor: pointer;
+}
