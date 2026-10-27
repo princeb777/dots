@@ -16,6 +16,18 @@ super + r
 super + {v,c,b,t,s}
     { code, alacritty, google-chrome-stable, Telegram, spotify-launcher }
 
+# Prism Launcher
+super + m
+    prismlauncher
+
+# Claude Desktop
+super + d
+    claude-desktop
+
+# Helium Browser
+super + e
+    helium-browser
+
 
 #
 # ==========================================

@@ -40,6 +40,9 @@ You can choose to install everything automatically, or run any section individua
 | :--- | :--- |
 | **`Super + Shift + B`** | Toggle Polybar on/off (windows instantly snap to full screen) |
 | **`Super + R`** | Rofi App Launcher (Cyber / Fortnite Neon theme) |
+| **`Super + M`** | Launch Prism Launcher (Minecraft) |
+| **`Super + D`** | Launch Claude Desktop |
+| **`Super + E`** | Launch Helium Browser |
 | **`Super + Space`** | Toggle floating window mode |
 | **`Super + [1-9, 0]`** | Switch workspace (empty workspaces automatically hide) |
 | **`Super + Shift + [1-9, 0]`** | Move window to workspace |
