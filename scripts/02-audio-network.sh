@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # 02-audio-network.sh
-# Audio subsystem (PipeWire), Networking (NetworkManager), and Bluetooth (Bluez)
+# Exact audio and network packages currently on this machine
 # ==============================================================================
 
 set -e
 
-echo "==> [2/6] Installing Audio, Network & Bluetooth Essentials..."
+echo "==> [2/6] Checking Audio & Network Packages..."
 
 PACKAGES_AUDIO_NET=(
-    # PipeWire Audio Stack
+    # PipeWire stack
     pipewire
     pipewire-audio
     pipewire-pulse
@@ -18,20 +18,16 @@ PACKAGES_AUDIO_NET=(
     alsa-utils
     rtkit
 
-    # Networking
+    # Network & Bluetooth
     networkmanager
-    network-manager-applet
-
-    # Bluetooth
-    bluez
     bluez-utils
 )
 
-echo "--> Installing packages via pacman..."
+echo "--> Installing audio & network packages via pacman..."
 sudo pacman -S --needed --noconfirm "${PACKAGES_AUDIO_NET[@]}"
 
-echo "--> Enabling essential services..."
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable bluetooth.service
+echo "--> Ensuring essential services are enabled..."
+sudo systemctl enable NetworkManager.service 2>/dev/null || true
+sudo systemctl enable bluetooth.service 2>/dev/null || true
 
-echo "==> Audio, Network & Bluetooth setup completed!"
+echo "==> Audio & Network step completed!"

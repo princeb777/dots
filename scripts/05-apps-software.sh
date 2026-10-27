@@ -1,35 +1,23 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # 05-apps-software.sh
-# User software, applications, browsers, editors & media tools
+# Exact applications, browsers, editors & tools currently on this machine
 # ==============================================================================
 
 set -e
 
-echo "==> [5/6] Installing Applications, Browsers & Software..."
+echo "==> [5/6] Checking Applications & Software..."
 
-# 1. Official Pacman Software
 PACKAGES_APPS=(
-    # Terminal & File Management
     alacritty
     thunar
-    tumbler                 # Image thumbnail generation in Thunar
-    thunar-archive-plugin   # Archive integration in Thunar
-
-    # Code Editors
-    code                    # VS Code
-    zed                     # High-performance editor
-    vim
-
-    # Media & Communication
+    nemo
+    code
+    zed
     spotify-launcher
     telegram-desktop
-
-    # Creative & Gaming
     blender
-    prismlauncher           # Minecraft launcher
-
-    # Developer Runtimes & Tools
+    prismlauncher
     docker
     docker-compose
     docker-buildx
@@ -38,20 +26,18 @@ PACKAGES_APPS=(
     gradle
     android-tools
     rustup
-    uv                      # Fast Python package manager
+    uv
     github-cli
     aria2
+    python-cattrs
 )
 
-# 2. AUR Applications
 PACKAGES_AUR=(
-    # Web Browsers
     google-chrome
     helium-browser-bin
-
-    # AI & Productivity
     claude-desktop
     cloudflare-warp-bin
+    antigravity
 )
 
 echo "--> Installing official applications via pacman..."
@@ -60,11 +46,10 @@ sudo pacman -S --needed --noconfirm "${PACKAGES_APPS[@]}"
 echo "--> Installing AUR applications via paru..."
 paru -S --needed --noconfirm "${PACKAGES_AUR[@]}"
 
-# Enable Docker service if docker is installed
+# Ensure docker service is enabled
 if command -v docker &>/dev/null; then
-    echo "--> Enabling Docker service..."
     sudo systemctl enable docker.service 2>/dev/null || true
     sudo usermod -aG docker "$USER" 2>/dev/null || true
 fi
 
-echo "==> Applications & software installed successfully!"
+echo "==> Applications step completed!"

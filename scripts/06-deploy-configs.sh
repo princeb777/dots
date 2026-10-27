@@ -34,10 +34,4 @@ chmod +x "$HOME/.config/polybar/scripts/"*.sh 2>/dev/null || true
 chmod +x "$HOME/.config/bspwm/bspwmrc" 2>/dev/null || true
 chmod +x "$HOME/.config/bspwm/scripts/"*.sh 2>/dev/null || true
 
-# 6. Initialize betterlockscreen cache if installed
-if command -v betterlockscreen &>/dev/null && [ -f "$HOME/Pictures/wallpapers/anime.jpg" ]; then
-    echo "--> Caching lockscreen wallpaper with betterlockscreen..."
-    betterlockscreen -u "$HOME/Pictures/wallpapers/anime.jpg" 2>/dev/null || true
-fi
-
 echo "==> All configurations deployed successfully!"

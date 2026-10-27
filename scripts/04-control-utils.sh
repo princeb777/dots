@@ -1,31 +1,25 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # 04-control-utils.sh
-# System control utilities (Brightness, Volume, Media, Notifications, Wallpaper)
+# Exact hardware control & CLI utilities currently on this machine
 # ==============================================================================
 
 set -e
 
-echo "==> [4/6] Installing Control Utilities & Hardware Tools..."
+echo "==> [4/6] Checking Control Utilities & Tools..."
 
 PACKAGES_UTILS=(
-    # Hardware controls
-    brightnessctl   # Screen backlight controller
-    playerctl       # Media player MPRIS controller (Spotify, browsers)
-    feh             # Wallpaper setting utility
-    libnotify       # Desktop notification sender (notify-send)
-
-    # Clipboard & File integration
-    xclip           # X11 clipboard CLI
-    gvfs-mtp        # Android / Phone MTP file access support
+    brightnessctl
+    playerctl
+    feh
+    gvfs-mtp
+    fastfetch
     unzip
     zip
-
-    # System info fetcher
-    fastfetch
+    vim
 )
 
 echo "--> Installing utilities via pacman..."
 sudo pacman -S --needed --noconfirm "${PACKAGES_UTILS[@]}"
 
-echo "==> Control utilities installed successfully!"
+echo "==> Control utilities step completed!"
