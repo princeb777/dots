@@ -32,4 +32,14 @@ paru -S --needed --noconfirm "${PACKAGES_AUR[@]}"
 echo "--> Enabling lemurs display manager..."
 sudo systemctl enable lemurs.service 2>/dev/null || true
 
+# Setup Lemurs BSPWM session file
+if [ -d /etc/lemurs/wms ]; then
+    echo "--> Configuring Lemurs bspwm session entry..."
+    sudo tee /etc/lemurs/wms/bspwm >/dev/null << 'EOF'
+sxhkd &
+exec bspwm
+EOF
+    sudo chmod +x /etc/lemurs/wms/bspwm 2>/dev/null || true
+fi
+
 echo "==> Window Manager & Desktop step completed!"
