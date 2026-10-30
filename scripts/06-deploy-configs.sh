@@ -13,7 +13,7 @@ echo "==> [6/6] Deploying configuration files & wallpapers..."
 mkdir -p "$HOME/.config" "$HOME/Pictures/wallpapers"
 
 # 2. Deploy .config files
-echo "--> Copying .config folders (bspwm, polybar, rofi, sxhkd, picom, alacritty, fastfetch)..."
+echo "--> Copying .config folders (bspwm, polybar, rofi, sxhkd, picom, alacritty, fastfetch, zed, Thunar, xfce4, mimeapps)..."
 cp -rv "$ROOT_DIR/.config/"* "$HOME/.config/"
 
 # 3. Deploy home directory files

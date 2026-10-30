@@ -37,6 +37,7 @@ PACKAGES_AUR=(
     helium-browser-bin
     claude-desktop
     cloudflare-warp-bin
+    bluetuith
     antigravity
 )
 
@@ -45,6 +46,9 @@ sudo pacman -S --needed --noconfirm "${PACKAGES_APPS[@]}"
 
 echo "--> Installing AUR applications via paru..."
 paru -S --needed --noconfirm "${PACKAGES_AUR[@]}"
+
+# Enable Cloudflare WARP daemon
+sudo systemctl enable warp-svc.service 2>/dev/null || true
 
 # Ensure docker service is enabled
 if command -v docker &>/dev/null; then
