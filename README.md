@@ -27,9 +27,9 @@ You can choose to install everything automatically, or run any section individua
 | :--- | :--- |
 | **`01-system-drivers.sh`** | Core system base, bootloader (`grub`, `efibootmgr`), exact hardware drivers (`intel-ucode`, `nvidia-open`, `mesa`, `sof-firmware`, `linux-firmware-intel`, `linux-firmware-realtek`), and auto-install of `paru` (AUR helper). |
 | **`02-audio-network.sh`** | PipeWire audio stack (`pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `rtkit`), `networkmanager`, and Bluetooth (`bluez-utils`). Enables system services. |
-| **`03-wm-desktop.sh`** | Window manager (`bspwm`), hotkeys (`sxhkd`), status bar (`polybar`), app launcher (`rofi`), compositor (`picom`), display manager (`lemurs`), `xlibre-meta`, and `ttf-daddytime-mono-nerd`. Sets up Lemurs BSPWM session entry. |
+| **`03-wm-desktop.sh`** | Adds the XLibre binary repo (`[xlibre-stable]` from `packages.xlibre.net`) to `/etc/pacman.conf` and imports + locally signs its pinned key, then installs `xlibre-meta` (display server), window manager (`bspwm`), hotkeys (`sxhkd`), status bar (`polybar`), app launcher (`rofi`), compositor (`picom`), display manager (`lemurs`), and `ttf-daddytime-mono-nerd`. Sets up Lemurs BSPWM session entry. |
 | **`04-control-utils.sh`** | Hardware control utilities: `brightnessctl` (backlight), `playerctl` (media), `feh` (wallpaper), `fastfetch`, `gvfs-mtp` (phone storage), `unzip`, `zip`, `vim`. |
-| **`05-apps-software.sh`** | Handpicked user software: `alacritty`, `thunar`, `nemo`, `code` (VS Code), `zed`, `google-chrome`, `helium-browser-bin`, `spotify-launcher`, `telegram-desktop`, `blender`, `prismlauncher`, `docker`, `rustup`, `uv`, `claude-desktop`, `cloudflare-warp-bin`, `antigravity`, and dev runtimes. |
+| **`05-apps-software.sh`** | Handpicked user software: `alacritty`, `thunar`, `nemo`, `code` (VS Code), `zed`, `google-chrome`, `helium-browser-bin`, `spotify-launcher`, `telegram-desktop`, `blender`, `prismlauncher`, `docker`, `rustup`, `uv`, `claude-desktop`, `cloudflare-warp-bin`, `antigravity`, `horizon-launcher-bin`, `webex-bin`, and dev runtimes. |
 | **`06-deploy-configs.sh`** | Deploys all `.config/` files, `.bashrc`, and wallpapers to `$HOME`, and sets executable permissions on all bar and toggle scripts. |
 
 ---

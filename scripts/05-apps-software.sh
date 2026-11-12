@@ -39,6 +39,8 @@ PACKAGES_AUR=(
     cloudflare-warp-bin
     bluetuith
     antigravity
+    horizon-launcher-bin
+    webex-bin
 )
 
 echo "--> Installing official applications via pacman..."

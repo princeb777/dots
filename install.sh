@@ -22,7 +22,7 @@ show_menu() {
     echo " 2) Hardware Drivers & System Core (Intel + NVIDIA + Realtek)"
     echo " 3) Audio, Network & Bluetooth (PipeWire + NetworkManager + Bluez)"
     echo " 4) Window Manager & Desktop (BSPWM + Polybar + Rofi + Lemurs)"
-    echo " 5) Control Utilities (Brightness, Media, Wallpaper, Notifications)"
+    echo " 5) Control Utilities (Brightness, Media, Wallpaper, CLI tools)"
     echo " 6) User Applications (Chrome, VS Code, Zed, Spotify, etc.)"
     echo " 7) Deploy Configuration Files & Wallpapers Only"
     echo " q) Quit"
