@@ -23,9 +23,12 @@ while true; do
         # Generate pywal16 colors from the wallpaper. Templates in
         # ~/.config/wal/templates are rendered into ~/.cache/wal
         # (alacritty imports ~/.cache/wal/alacritty.toml).
-        # -n: don't set wallpaper (feh does it)  -t: skip tty  -q: quiet
+        # -n: don't set wallpaper (feh does it)  -q: quiet
+        # -e: skip pywal's env reload — it runs `bspc wm -r` (restarts bspwm),
+        #     which can crash the WM and log you out of the lemurs session.
+        #     Open terminals are still recolored via escape sequences.
         if command -v wal &>/dev/null; then
-            wal -i "$WALLPAPER" -n -t -q
+            wal -i "$WALLPAPER" -n -e -q
         fi
 
         # --bg-fill preserves aspect ratio (no stretching) by zooming to fill screen
