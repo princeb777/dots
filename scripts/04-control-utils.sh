@@ -19,7 +19,14 @@ PACKAGES_UTILS=(
     vim
 )
 
+PACKAGES_AUR=(
+    python-pywal16   # wallpaper -> color scheme (alacritty via ~/.config/wal/templates)
+)
+
 echo "--> Installing utilities via pacman..."
 sudo pacman -S --needed --noconfirm "${PACKAGES_UTILS[@]}"
+
+echo "--> Installing AUR utilities (pywal16) via paru..."
+paru -S --needed --noconfirm "${PACKAGES_AUR[@]}"
 
 echo "==> Control utilities step completed!"

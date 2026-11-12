@@ -1,4 +1,4 @@
-# ~/.config/wal/templates/alacritty16.toml
+# ~/.config/wal/templates/alacritty.toml -> rendered to ~/.cache/wal/alacritty.toml
 [colors.primary]
 background = "{background}"
 foreground = "{foreground}"
